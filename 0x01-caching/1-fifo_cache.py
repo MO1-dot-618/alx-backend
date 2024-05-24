@@ -18,14 +18,14 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """ Add an item in the cache
         """
-        if(key and item):
+        if (key and item):
             self.cache_data[key] = item
             self.order.append(key)
-            
-            # If the cache exceeds the maximum items, discard the first item (FIFO)
+
+            # If cache exceeds max items, discard the first item (FIFO)
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 oldest_key = self.order.pop(0)  # Remove the oldest key
-                del self.cache_data[oldest_key]  # Remove the oldest item from the cache
+                del self.cache_data[oldest_key]
                 print(f"DISCARD: {oldest_key}")
 
     def get(self, key):
