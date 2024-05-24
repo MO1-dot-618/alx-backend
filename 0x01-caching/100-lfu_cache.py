@@ -5,7 +5,7 @@ from collections import defaultdict, OrderedDict
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class BasicCache(BaseCaching):
+class LFUCache(BaseCaching):
     """ BasicCache class
     Inherits from BaseCaching and implements a basic LFU caching system.
     """
