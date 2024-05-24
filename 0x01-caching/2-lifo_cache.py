@@ -4,7 +4,7 @@
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """ BaseCaching defines:
       - constants of your caching system
       - where your data are stored (in a dictionary)
