@@ -14,7 +14,7 @@ class LRUCache(BaseCaching):
         """ Initiliaze
         """
         super().__init__()
-        self.cache_data = OrderedDict()  
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """ Add an item in the cache
@@ -22,7 +22,6 @@ class LRUCache(BaseCaching):
         if (key and item):
             self.cache_data[key] = item
             self.cache_data.move_to_end(key)
-            
             # discard the least recently used item (LRU)
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 oldest_key, _ = self.cache_data.popitem(last=False)
