@@ -5,7 +5,7 @@ from collections import OrderedDict
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class LIFOCache(BaseCaching):
+class LRUCache(BaseCaching):
     """ BaseCaching defines:
       - constants of your caching system
       - where your data are stored (in a dictionary)
